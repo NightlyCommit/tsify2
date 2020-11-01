@@ -1,0 +1,41 @@
+{
+  "name": "tsify2",
+  "version": "0.1.0",
+  "description": "Browserify plugin for TypeScript sources",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "precover": "rimraf coverage .nyc_output",
+    "prebuild": "npm run clean",
+    "prepack": "npm run clean && npm run build",
+    "postpack": "npm run clean",
+    "build": "tsc",
+    "build:doc": "typedoc --mode file --out docs --name tsify2 --excludePrivate --excludeNotExported --stripInternal src",
+    "test": "ts-node node_modules/tape/bin/tape 'test/**/test.ts' | tap-spec",
+    "cover": "rimraf .nyc_output coverage && nyc npm t",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "typescript"
+  ],
+  "author": "Eric MORAND <eric.morand@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/browserify": "^12.0.36",
+    "@types/tape": "^4.13.0",
+    "browserify": "^17.0.0",
+    "coveralls": "^3.1.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.1",
+    "ts-node": "^9.0.0",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.5"
+  },
+  "peerDependencies": {
+    "typescript": "^4.0.5"
+  }
+}

@@ -1,0 +1,15 @@
+/.editorconfig
+/.gitattributes
+/.gitignore
+/.idea
+/.npmignore
+/.npmrc
+/.nyc_output
+/.nycrc.json
+/.coveralls.yml
+/.travis.yml
+/coverage
+/docs
+/src
+/test
+/tsconfig.json
